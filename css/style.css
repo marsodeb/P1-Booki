@@ -149,7 +149,11 @@ form {
 
 /* button first afin de pouvoir appliquer la taille parfait à l'input */
 
-.search-bar button {
+.phone-button {
+  display: none;
+}
+
+.desktop-button {
   min-width: 132px; /* taille respectueuse de la maquette (min-width pour éviter un écrasement de l'input) */
   background-color: var(--main-color);
   color: white;
@@ -162,7 +166,7 @@ form {
 .search-bar input {
   width: 100%; /* pour que l'input redimensionne en laissant le bouton et l'icon à la bonne taille */
   border: 1px solid var(--main-bg-color);
-  text-align: center;
+  padding-left: 24px; /* respectueux de la maquette */
   color: black;
   font-size: 18px;
   font-weight: 700;
@@ -477,5 +481,31 @@ footer ul {
     border-bottom: 2px solid var(--main-color);
   }
 
+  .desktop-button {
+    display: none; /* faire disparaitre le button desktop */
+  }
+
+  form {
+    max-width: 387px; /* rajout de 10px sur la taille pour le mobile button en position relative -10px = permet de revenir à 377px */
+  }
+
+  .phone-button {
+    display: flex; /* faire apparaitre + permet de centrer l'icon */
+    align-items: center; /* centrage */
+    justify-content: center; /* centrage */
+    min-width: 50px;
+    min-height: 49px;
+    background-color: var(--main-color);
+    border-radius: 15px 15px 15px 15px;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    border: none; /* reset */
+    position: relative; /* pour pouvoir placer le button au dessus de l'input comme sur la maquette */
+    left: -10px; /* décalage de 10px afin qu'il soit bien par dessus l'input */
+  }
+
+  .phone-button i {
+    font-size: 17px;
+    color: white;
+  }
   /* ... */
 }
