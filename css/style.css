@@ -103,13 +103,13 @@ nav ul {
 }
 
 nav .section-small-txt {
-  padding-top: 16px; /* écart de 16px du top pour respectuer la maquette */
+  border-top: 2px solid transparent; /* application d'une border transparent pour éviter le déplacement du texte en hover quand on ajoute une border */
+  padding-top: 14px; /* écart de 14px du top pour respectuer la maquette */
 }
 
-nav .section-small-txt a:hover {
+nav .section-small-txt:hover {
   color: var(--main-color);
   border-top: 2px solid var(--main-color);
-  padding-top: 14px; /* écart de 14px du top + 2px de border pour rejoindre les 16px d'écart du texte */
 }
 
 /****** Filter & Search ******/
@@ -149,7 +149,11 @@ form {
 
 /* button first afin de pouvoir appliquer la taille parfait à l'input */
 
-.search-bar button {
+.phone-button {
+  display: none;
+}
+
+.desktop-button {
   min-width: 132px; /* taille respectueuse de la maquette (min-width pour éviter un écrasement de l'input) */
   background-color: var(--main-color);
   color: white;
@@ -162,7 +166,7 @@ form {
 .search-bar input {
   width: 100%; /* pour que l'input redimensionne en laissant le bouton et l'icon à la bonne taille */
   border: 1px solid var(--main-bg-color);
-  text-align: center;
+  padding-left: 24px; /* respectueux de la maquette */
   color: black;
   font-size: 18px;
   font-weight: 700;
@@ -183,7 +187,6 @@ form {
 
 .filter-button {
   display: flex; /* alignement horizontal button */
-  height: 50px; /* hauteur respectueuse de la maquette */
   gap: 15px; /* gap respectueux de la maquette */
 }
 
@@ -196,7 +199,7 @@ form {
   border: 2px solid var(--border-color);
   font-size: 17px;
   font-weight: 700;
-  height: 100%; /* 100% du parent (filter-button) */
+  height: 50px; /* hauteur respectueuse de la maquette */
   gap: 10px; /* gap respectueux de la maquette */
 }
 
@@ -339,24 +342,25 @@ form {
   padding: 30px; /* écart supérieur et inférieur respectueux de la maquette */
 }
 
-.activities-title {
-  margin-bottom: 30px; /* écart inférieur respectueux de la maquette */
-}
-
 .activities-cards {
   display: flex; /* affichage en ligne horizontale des cards */
+  justify-content: center; /* centrage */
   gap: 30px; /* gap respectueux de la maquette */
+  padding: 30px 0 65px 0; /* respectueux de la maquette */
 }
 
+.activities-cards a {
+  min-width: 23%; /* taille du parent respectueux de la maquette */
+}
 .activities-cards .card {
   display: flex; /* pour passer en colonne */
   flex-direction: column; /* passage en colonne */
-  min-width: 23%; /* taille respectueuse de la maquette en % pour le responsive */
   padding: 0; /* reset du padding de base */
+  width: 100%; /* 100% du parents */
+  height: 100%; /* pour avoir toujours la même hauteur même avec le passage à la ligne */
 }
 
 .activities-cards img {
-  width: 100%; /* 100% du parent donc card */
   height: 380px; /* taille respectueuse de la maquette en hauteur */
   border-radius: 20px 20px 0 0;
 }
@@ -392,6 +396,17 @@ footer ul {
 /****** Media queries ***********/
 /* Medium devices (tablets, less/equal than 1024px) */
 @media (max-width: 1024px) {
+  /* Filter  */
+
+  .filter {
+    flex-direction: column; /* passage en colonne pour le texte et les buttons */
+    align-items: flex-start; /* reset du center pour replacer au début */
+  }
+
+  .filter-button button {
+    font-size: 16px; /* taille respectueuse de la maquette */
+  }
+  /* Heberbements & populaires  */
   .hebergements-and-populaires {
     flex-direction: column;
   }
@@ -422,9 +437,148 @@ footer ul {
   .populaires-cards .card-subtitle {
     font-size: 13px;
   }
+  /* Activities  */
+  .activities-cards img {
+    height: 200px; /* taille respectueuse de la maquette en hauteur */
+  }
 }
 
 /* Small devices (phones, less than 768px) */
 @media (max-width: 767.98px) {
-  /* ... */
+  /* Body  */
+  .main-container {
+    padding: 0 20px; /* padding respectueux de la maquette */
+  }
+  /* Header & navigation */
+  header {
+    flex-direction: column; /* passage en colonne du logo et de la nav */
+    align-items: center; /* centrage */
+  }
+
+  nav {
+    width: 100%; /* application d'une width de 100% de la longueur à la nav (parent) */
+  }
+
+  nav ul {
+    justify-content: center; /* centrage */
+    gap: 0px; /* reset du gap */
+    margin: 0 -20px; /* reset du padding du main-container */
+  }
+
+  nav .section-small-txt {
+    width: 50%; /* 50% du parent donc nav */
+    text-align: center; /* centrage du texte dans les 50% de width */
+    border-top: 0px; /* reset */
+    padding-top: 0px; /* reset */
+    padding-bottom: 14px; /* écart de 14px vers le bas pour respecter la maquette */
+    border-bottom: 2px solid var(--main-bg-color); /* Ajout des lignes grises en dessous */
+  }
+
+  nav .section-small-txt:hover {
+    border-top: 0px; /* reset */
+    color: var(--main-color);
+    border-bottom: 2px solid var(--main-color);
+  }
+  /* Search & filter */
+  .desktop-button {
+    display: none; /* faire disparaitre le button desktop */
+  }
+
+  form {
+    max-width: 387px; /* rajout de 10px sur la taille pour le mobile button en position relative -10px = permet de revenir à 377px */
+  }
+
+  .phone-button {
+    display: flex; /* faire apparaitre + permet de centrer l'icon */
+    align-items: center; /* centrage */
+    justify-content: center; /* centrage */
+    min-width: 50px;
+    min-height: 49px;
+    background-color: var(--main-color);
+    border-radius: 15px 15px 15px 15px;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    border: none; /* reset */
+    position: relative; /* pour pouvoir placer le button au dessus de l'input comme sur la maquette */
+    left: -10px; /* décalage de 10px afin qu'il soit bien par dessus l'input */
+  }
+
+  .phone-button i {
+    font-size: 17px; /* respectueux de la maquette */
+    color: white;
+  }
+
+  .filter-button {
+    gap: 20px 10px; /* respectueux de la maquette */
+    flex-wrap: wrap; /* passage à la ligne des boutons */
+  }
+
+  .filter-button button {
+    width: 48%; /* 48% pour laisser de la place au gap */
+    font-size: 14px; /* respectueux de la maquette */
+  }
+  /* Hebergements & populaires  */
+
+  .hebergements-and-populaires {
+    flex-direction: column-reverse; /* Inverser le sens respectueux de la maquette */
+    margin: 0 -20px; /* pour un background qui prend la longueur complete et qui écrase le "main-container" */
+  }
+
+  .hebergements-and-populaires section {
+    border-radius: 0px; /* reset pour respecter la maquette */
+    padding: 30px 20px; /* reset pour respecter la maquette */
+  }
+
+  .populaires {
+    margin-top: 0; /* Reset du margin appliquer pour la version tablette */
+  }
+
+  .populaires-cards {
+    flex-direction: column; /* Affichage en colonne */
+  }
+
+  .populaires-cards a {
+    width: 100%; /* 100% de la longueur */
+  }
+
+  .populaires-cards .card-title {
+    font-size: 16px; /* respectueux de la maquette */
+  }
+
+  .hebergements-and-populaires .hebergements {
+    background-color: white; /* passage au blanc respectueux de la maquette */
+  }
+
+  .hebergements-cards {
+    flex-direction: column;
+  }
+
+  /* Activities  */
+  .activities {
+    padding: 0 10px; /* respectueux de la maquette */
+  }
+
+  .activities-cards {
+    flex-direction: column; /* passage en colonne */
+    gap: 15px; /* respectueux de la maquette */
+  }
+
+  .activities-cards img {
+    height: 141px; /* taille respectueuse de la maquette en hauteur */
+  }
+
+  /* Footer */
+
+  .footer-container {
+    flex-direction: column; /* passage en colonne */
+    padding: 30px; /* respectueux de la maquette */
+    gap: 50px; /* respectueux de la maquette */
+  }
+
+  footer {
+    margin: 0 -20px; /* pour un background qui prend la longueur complete et qui écrase le "main-container" */
+  }
+
+  footer ul {
+    width: 100%; /* taille respectueuse de la maquette */
+  }
 }
