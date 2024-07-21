@@ -342,14 +342,11 @@ form {
   padding: 30px; /* écart supérieur et inférieur respectueux de la maquette */
 }
 
-.activities-title {
-  margin-bottom: 30px; /* écart inférieur respectueux de la maquette */
-}
-
 .activities-cards {
   display: flex; /* affichage en ligne horizontale des cards */
   justify-content: center; /* centrage */
   gap: 30px; /* gap respectueux de la maquette */
+  padding: 30px 0 65px 0; /* respectueux de la maquette */
 }
 
 .activities-cards a {
@@ -554,5 +551,20 @@ footer ul {
   .hebergements-cards {
     flex-direction: column;
   }
+
+  /* Activities  */
+  .activities {
+    padding: 0 10px; /* respectueux de la maquette */
+  }
+
+  .activities-cards {
+    flex-direction: column; /* passage en colonne */
+    gap: 15px; /* respectueux de la maquette */
+  }
+
+  .activities-cards img {
+    height: 141px; /* taille respectueuse de la maquette en hauteur */
+  }
+
   /* ... */
 }
