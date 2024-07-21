@@ -7,6 +7,7 @@
   --main-color: #0065fc;
   --main-bg-color: #f2f2f2;
   --filter-bg-color: #deebff;
+  --border-color: #d9d9d9;
 }
 
 .fa-solid {
@@ -45,10 +46,12 @@ li {
 }
 
 .section-medium-txt {
+  margin: 0;
   font-size: 18px; /* Création d'une class pour les textes de 18 px  */
 }
 
 .section-small-txt {
+  margin: 0;
   font-size: 16px; /* Création d'une class pour les textes de 16 px  */
 }
 
@@ -106,6 +109,120 @@ nav .section-small-txt a:hover {
   color: var(--main-color);
   border-top: 2px solid var(--main-color);
   padding-top: 14px; /* écart de 14px du top + 2px de border pour rejoindre les 16px d'écart du texte */
+}
+
+/* Filter & Search  */
+
+.search {
+  margin-top: 30px; /* écart de 30px du header respectueux de la maquette */
+}
+
+.search-title .section-small-txt {
+  margin-top: 8px; /* écart de 8px du titre h2 respectueux de la maquette */
+}
+
+.search-bar {
+  margin: 35px 0; /* écart de 35px inférieur et supérieur respectueux de la maquette  */
+}
+
+form {
+  display: flex; /* utilisation de display flex afin d'enlever le "white space" du form  */
+  height: 49px; /* taille respectueuse de la maquette  */
+  max-width: 377px; /* taille max respectueuse de la maquette (permettra d'être éditer plus facilement en media queries)  */
+}
+
+.search-icon {
+  display: flex; /* afin de pouvoir centrer le logo à l'intérieur  */
+  align-items: center; /* centrage */
+  justify-content: center; /* centrage */
+  background-color: var(--main-bg-color);
+  border-radius: 15px 0px 0px 15px; /* radius respectueux de la maquette */
+  min-width: 50px; /* largeur respectueux de la maquette (min-width pour éviter un écrasement de l'input) */
+  height: 100%; /* 100% du parent (form) */
+}
+
+.search-icon i {
+  font-size: 18px; /* taille respectueuse de la maquette */
+  color: black; /* passage en noir */
+}
+
+/* button first afin de pouvoir appliquer la taille parfait à l'input */
+
+.search-bar button {
+  min-width: 132px; /* taille respectueuse de la maquette (min-width pour éviter un écrasement de l'input) */
+  background-color: var(--main-color);
+  color: white;
+  border: none; /* reset du border de base */
+  border-radius: 0px 15px 15px 0px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.search-bar input {
+  width: 100%; /* pour que l'input redimensionne en laissant le bouton et l'icon à la bonne taille */
+  border: 1px solid var(--main-bg-color);
+  text-align: center;
+  color: black;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.search-bar input::placeholder {
+  color: black;
+  font-size: 18px;
+  font-weight: 700;
+  opacity: 1; /* pour Mozilla */
+}
+
+.filter {
+  display: flex; /* alignement horizontal texte et button */
+  align-items: center; /* centrage texte et button */
+  gap: 15px;
+}
+
+.filter-button {
+  display: flex; /* alignement horizontal button */
+  height: 50px; /* hauteur respectueuse de la maquette */
+  gap: 15px; /* gap respectueux de la maquette */
+}
+
+.filter-button button {
+  display: flex; /* pour centrage et gap */
+  align-items: center;
+  background-color: white;
+  border-radius: 25px;
+  padding: 4px 19px; /* padding respectueux de la maquette */
+  border: 2px solid var(--border-color);
+  font-size: 17px;
+  font-weight: 700;
+  height: 100%; /* 100% du parent (filter-button) */
+  gap: 10px; /* gap respectueux de la maquette */
+}
+
+.filter button i {
+  font-size: 22px; /* size des icons */
+}
+
+.filter button:hover {
+  background-color: var(--filter-bg-color);
+}
+
+.search-number-result {
+  display: flex; /* alignement horizontal icon et texte */
+  align-items: center; /* centrage */
+  padding: 35px 0;
+  gap: 10px; /* gap respectueux de la maquette */
+}
+
+.search-number-result i {
+  display: flex; /* pour centrage */
+  align-items: center;
+  justify-content: center;
+  min-width: 24px; /* taille respectueuse de la maquette (min-width pour éviter un écrasement du texte) */
+  height: 24px; /* taille respectueuse de la maquette */
+  border: 1px solid var(--border-color);
+  border-radius: 100%; /* rond */
+  font-size: 11px; /* size icon */
 }
 
 /****** Hebergements And Populaires ***********/
