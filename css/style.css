@@ -331,6 +331,43 @@ form {
   margin-bottom: 5px;
 }
 
+/****** Activities ***********/
+
+.activities {
+  margin-top: 35px; /* séparation des sections respectueuse de la maquette */
+  padding: 30px; /* écart supérieur et inférieur respectueux de la maquette */
+}
+
+.activities-title {
+  margin-bottom: 30px; /* écart inférieur respectueux de la maquette */
+}
+
+.activities-cards {
+  display: flex; /* affichage en ligne horizontale des cards */
+  gap: 30px; /* gap respectueux de la maquette */
+}
+
+.activities-cards .card {
+  display: flex; /* pour passer en colonne */
+  flex-direction: column; /* passage en colonne */
+  min-width: 23%; /* taille respectueuse de la maquette en % pour le responsive */
+  padding: 0; /* reset du padding de base */
+}
+
+.activities-cards img {
+  width: 100%; /* 100% du parent donc card */
+  height: 380px; /* taille respectueuse de la maquette en hauteur */
+  border-radius: 20px 20px 0 0;
+}
+
+.activities-cards .card-content {
+  padding: 20px 19px; /* respectueux de la maquette*/
+}
+
+.activities-cards .card-content .card-title {
+  margin: 0; /* reset du margin de base */
+}
+
 /* Le code ci-dessous correspond à la version responsive uniquement */
 
 /****** Media queries ***********/
