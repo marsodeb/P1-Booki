@@ -519,5 +519,40 @@ footer ul {
     width: 48%; /* 48% pour laisser de la place au gap */
     font-size: 14px; /* respectueux de la maquette */
   }
+  /* Hebergements & populaires  */
+
+  .hebergements-and-populaires {
+    flex-direction: column-reverse; /* Inverser le sens respectueux de la maquette */
+    margin: 0 -20px; /* pour un background qui prend la longueur complete et qui écrase le "main-container" */
+  }
+
+  .hebergements-and-populaires section {
+    border-radius: 0px; /* reset pour respecter la maquette */
+    padding: 30px 20px; /* reset pour respecter la maquette */
+  }
+
+  .populaires {
+    margin-top: 0; /* Reset du margin appliquer pour la version tablette */
+  }
+
+  .populaires-cards {
+    flex-direction: column; /* Affichage en colonne */
+  }
+
+  .populaires-cards a {
+    width: 100%; /* 100% de la longueur */
+  }
+
+  .populaires-cards .card-title {
+    font-size: 16px; /* respectueux de la maquette */
+  }
+
+  .hebergements-and-populaires .hebergements {
+    background-color: white; /* passage au blanc respectueux de la maquette */
+  }
+
+  .hebergements-cards {
+    flex-direction: column;
+  }
   /* ... */
 }
