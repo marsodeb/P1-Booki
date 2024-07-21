@@ -566,5 +566,19 @@ footer ul {
     height: 141px; /* taille respectueuse de la maquette en hauteur */
   }
 
-  /* ... */
+  /* Footer */
+
+  .footer-container {
+    flex-direction: column; /* passage en colonne */
+    padding: 30px; /* respectueux de la maquette */
+    gap: 50px; /* respectueux de la maquette */
+  }
+
+  footer {
+    margin: 0 -20px; /* pour un background qui prend la longueur complete et qui écrase le "main-container" */
+  }
+
+  footer ul {
+    width: 100%; /* taille respectueuse de la maquette */
+  }
 }
