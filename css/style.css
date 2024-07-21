@@ -187,7 +187,6 @@ form {
 
 .filter-button {
   display: flex; /* alignement horizontal button */
-  height: 50px; /* hauteur respectueuse de la maquette */
   gap: 15px; /* gap respectueux de la maquette */
 }
 
@@ -200,7 +199,7 @@ form {
   border: 2px solid var(--border-color);
   font-size: 17px;
   font-weight: 700;
-  height: 100%; /* 100% du parent (filter-button) */
+  height: 50px; /* hauteur respectueuse de la maquette */
   gap: 10px; /* gap respectueux de la maquette */
 }
 
@@ -400,6 +399,8 @@ footer ul {
 /****** Media queries ***********/
 /* Medium devices (tablets, less/equal than 1024px) */
 @media (max-width: 1024px) {
+  /* Filter  */
+
   .filter {
     flex-direction: column; /* passage en colonne pour le texte et les buttons */
     align-items: flex-start; /* reset du center pour replacer au début */
@@ -408,7 +409,7 @@ footer ul {
   .filter-button button {
     font-size: 16px; /* taille respectueuse de la maquette */
   }
-
+  /* Heberbements & populaires  */
   .hebergements-and-populaires {
     flex-direction: column;
   }
@@ -439,7 +440,7 @@ footer ul {
   .populaires-cards .card-subtitle {
     font-size: 13px;
   }
-
+  /* Activities  */
   .activities-cards img {
     height: 200px; /* taille respectueuse de la maquette en hauteur */
   }
@@ -447,10 +448,11 @@ footer ul {
 
 /* Small devices (phones, less than 768px) */
 @media (max-width: 767.98px) {
+  /* Body  */
   .main-container {
     padding: 0 20px; /* padding respectueux de la maquette */
   }
-
+  /* Header & navigation */
   header {
     flex-direction: column; /* passage en colonne du logo et de la nav */
     align-items: center; /* centrage */
@@ -480,7 +482,7 @@ footer ul {
     color: var(--main-color);
     border-bottom: 2px solid var(--main-color);
   }
-
+  /* Search & filter */
   .desktop-button {
     display: none; /* faire disparaitre le button desktop */
   }
@@ -504,8 +506,18 @@ footer ul {
   }
 
   .phone-button i {
-    font-size: 17px;
+    font-size: 17px; /* respectueux de la maquette */
     color: white;
+  }
+
+  .filter-button {
+    gap: 20px 10px; /* respectueux de la maquette */
+    flex-wrap: wrap; /* passage à la ligne des boutons */
+  }
+
+  .filter-button button {
+    width: 48%; /* 48% pour laisser de la place au gap */
+    font-size: 14px; /* respectueux de la maquette */
   }
   /* ... */
 }
