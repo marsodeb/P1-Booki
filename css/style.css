@@ -33,7 +33,8 @@ a {
 }
 
 ul {
-  margin: 0; /* Reset du padding de base des ul  */
+  margin: 0; /* Reset du margin de base des ul  */
+  padding: 0; /* Reset du padding de base des ul  */
 }
 
 li {
@@ -366,6 +367,24 @@ form {
 
 .activities-cards .card-content .card-title {
   margin: 0; /* reset du margin de base */
+}
+
+/****** Footer ***********/
+
+footer {
+  background-color: var(--main-bg-color);
+}
+
+.footer-container {
+  display: flex; /* alignement horizontal des ul */
+  padding: 20px;
+}
+
+footer ul {
+  display: flex; /* flex pour les gaps */
+  flex-direction: column; /* affichage en colonne */
+  gap: 15px; /* gap respectueux de la maquette */
+  width: 33.33%; /* taille respectueuse de la maquette */
 }
 
 /* Le code ci-dessous correspond à la version responsive uniquement */
