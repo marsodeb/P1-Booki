@@ -78,7 +78,7 @@ li {
   color: var(--main-bg-color);
 }
 
-/* Header & Navigation  */
+/****** Header & Navigation  ******/
 
 header {
   display: flex;
@@ -111,7 +111,7 @@ nav .section-small-txt a:hover {
   padding-top: 14px; /* écart de 14px du top + 2px de border pour rejoindre les 16px d'écart du texte */
 }
 
-/* Filter & Search  */
+/****** Filter & Search ******/
 
 .search {
   margin-top: 30px; /* écart de 30px du header respectueux de la maquette */
@@ -241,6 +241,57 @@ form {
 /****** Hebergements ***********/
 .hebergements {
   width: 65%;
+}
+
+.hebergements-title {
+  margin-bottom: 30px;
+}
+
+.hebergements-cards {
+  display: flex; /* alignement horizontal des cards */
+  flex-wrap: wrap; /* passage à la ligne */
+  justify-content: space-between; /* séparation */
+}
+
+.hebergements .card {
+  display: flex; /* alignements vertical du content */
+  flex-direction: column;
+  flex: 0 0 29.66%; /* nombre de cards sur une ligne avant passage à la ligne + taille (respectueuse de la maquette) */
+  margin-bottom: 30px;
+}
+
+.hebergements-cards img {
+  width: 100%; /* 100% du parent donc de la card */
+  height: 114px; /* hauteur respectueuse de la maquette */
+  border-radius: 20px 20px 0 0;
+}
+
+.hebergements-cards .card-content {
+  padding-left: 15px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.hebergements-cards .card-title {
+  margin: 10px 0 0 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hebergements-cards .card-subtitle {
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 14px;
+  padding: 8px 0;
+}
+
+.hebergements-cards .card-rating {
+  font-size: 17px;
+  margin-bottom: 5px;
 }
 
 /****** Populaires ***********/
