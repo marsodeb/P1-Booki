@@ -1,167 +1,430 @@
 /****** General ***********/
 * {
-    font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 
 :root {
-    --main-color: #0065FC;
-    --main-bg-color: #F2F2F2;
-    --filter-bg-color: #DEEBFF;
+  --main-color: #0065fc;
+  --main-bg-color: #f2f2f2;
+  --filter-bg-color: #deebff;
+  --border-color: #d9d9d9;
 }
 
 .fa-solid {
-    color: var(--main-color);
+  color: var(--main-color);
 }
 
 body {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+  margin: 0;
 }
 
 .main-container {
-    width: 100%;
-    max-width: 1440px;
-    padding: 0 50px;
-    box-sizing: border-box;
+  width: 100%;
+  max-width: 1440px;
+  padding: 0 50px;
+  box-sizing: border-box;
 }
 
 a {
-    color: inherit;
-    text-decoration: none;
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  margin: 0; /* Reset du margin de base des ul  */
+  padding: 0; /* Reset du padding de base des ul  */
+}
+
+li {
+  list-style: none; /* Permet d'enlever les points des "listes"  */
 }
 
 .section-title {
-    margin: 0;
-    font-size: 22px;
+  margin: 0;
+  font-size: 22px;
+}
+
+.section-medium-txt {
+  margin: 0;
+  font-size: 18px; /* Création d'une class pour les textes de 18 px  */
+}
+
+.section-small-txt {
+  margin: 0;
+  font-size: 16px; /* Création d'une class pour les textes de 16 px  */
 }
 
 .card {
-    background-color: white;
-    border-radius: 20px;
-    padding: 5px;
-    filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
+  background-color: white;
+  border-radius: 20px;
+  padding: 5px;
+  filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
 }
 
 .card img {
-    object-fit: cover;
+  object-fit: cover;
 }
 
 .card-title {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .euro {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 .neutral-star {
-    color: var(--main-bg-color)
+  color: var(--main-bg-color);
+}
+
+/****** Header & Navigation  ******/
+
+header {
+  display: flex;
+  justify-content: space-between; /* créer l'espace pour séparer le logo et la nav */
+}
+
+.booki-logo {
+  width: 61px; /* taille de logo respectueuse de la maquette */
+  height: 19px;
+  padding: 30px 0; /* ajout d'un padding sur le logo respectueux de la maquette */
+}
+
+.booki-logo img {
+  width: 100%; /* 100% de la taille du parent (donc booki-logo) */
+  height: 100%;
+}
+
+nav ul {
+  display: flex; /* passage du vertical à l'horizontal */
+  gap: 70px; /* séparation des li respectueuse de la maquette */
+}
+
+nav .section-small-txt {
+  padding-top: 16px; /* écart de 16px du top pour respectuer la maquette */
+}
+
+nav .section-small-txt a:hover {
+  color: var(--main-color);
+  border-top: 2px solid var(--main-color);
+  padding-top: 14px; /* écart de 14px du top + 2px de border pour rejoindre les 16px d'écart du texte */
+}
+
+/****** Filter & Search ******/
+
+.search {
+  margin-top: 30px; /* écart de 30px du header respectueux de la maquette */
+}
+
+.search-title .section-small-txt {
+  margin-top: 8px; /* écart de 8px du titre h2 respectueux de la maquette */
+}
+
+.search-bar {
+  margin: 35px 0; /* écart de 35px inférieur et supérieur respectueux de la maquette  */
+}
+
+form {
+  display: flex; /* utilisation de display flex afin d'enlever le "white space" du form  */
+  height: 49px; /* taille respectueuse de la maquette  */
+  max-width: 377px; /* taille max respectueuse de la maquette (permettra d'être éditer plus facilement en media queries)  */
+}
+
+.search-icon {
+  display: flex; /* afin de pouvoir centrer le logo à l'intérieur  */
+  align-items: center; /* centrage */
+  justify-content: center; /* centrage */
+  background-color: var(--main-bg-color);
+  border-radius: 15px 0px 0px 15px; /* radius respectueux de la maquette */
+  min-width: 50px; /* largeur respectueux de la maquette (min-width pour éviter un écrasement de l'input) */
+  height: 100%; /* 100% du parent (form) */
+}
+
+.search-icon i {
+  font-size: 18px; /* taille respectueuse de la maquette */
+  color: black; /* passage en noir */
+}
+
+/* button first afin de pouvoir appliquer la taille parfait à l'input */
+
+.search-bar button {
+  min-width: 132px; /* taille respectueuse de la maquette (min-width pour éviter un écrasement de l'input) */
+  background-color: var(--main-color);
+  color: white;
+  border: none; /* reset du border de base */
+  border-radius: 0px 15px 15px 0px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.search-bar input {
+  width: 100%; /* pour que l'input redimensionne en laissant le bouton et l'icon à la bonne taille */
+  border: 1px solid var(--main-bg-color);
+  text-align: center;
+  color: black;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.search-bar input::placeholder {
+  color: black;
+  font-size: 18px;
+  font-weight: 700;
+  opacity: 1; /* pour Mozilla */
+}
+
+.filter {
+  display: flex; /* alignement horizontal texte et button */
+  align-items: center; /* centrage texte et button */
+  gap: 15px;
+}
+
+.filter-button {
+  display: flex; /* alignement horizontal button */
+  height: 50px; /* hauteur respectueuse de la maquette */
+  gap: 15px; /* gap respectueux de la maquette */
+}
+
+.filter-button button {
+  display: flex; /* pour centrage et gap */
+  align-items: center;
+  background-color: white;
+  border-radius: 25px;
+  padding: 4px 19px; /* padding respectueux de la maquette */
+  border: 2px solid var(--border-color);
+  font-size: 17px;
+  font-weight: 700;
+  height: 100%; /* 100% du parent (filter-button) */
+  gap: 10px; /* gap respectueux de la maquette */
+}
+
+.filter button i {
+  font-size: 22px; /* size des icons */
+}
+
+.filter button:hover {
+  background-color: var(--filter-bg-color);
+}
+
+.search-number-result {
+  display: flex; /* alignement horizontal icon et texte */
+  align-items: center; /* centrage */
+  padding: 35px 0;
+  gap: 10px; /* gap respectueux de la maquette */
+}
+
+.search-number-result i {
+  display: flex; /* pour centrage */
+  align-items: center;
+  justify-content: center;
+  min-width: 24px; /* taille respectueuse de la maquette (min-width pour éviter un écrasement du texte) */
+  height: 24px; /* taille respectueuse de la maquette */
+  border: 1px solid var(--border-color);
+  border-radius: 100%; /* rond */
+  font-size: 11px; /* size icon */
 }
 
 /****** Hebergements And Populaires ***********/
 .hebergements-and-populaires {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .hebergements-and-populaires section {
-    background-color: var(--main-bg-color);
-    border-radius: 20px;
-    padding: 30px;
-    box-sizing: border-box;
+  background-color: var(--main-bg-color);
+  border-radius: 20px;
+  padding: 30px;
+  box-sizing: border-box;
 }
 
 /****** Hebergements ***********/
 .hebergements {
-    width: 65%;
+  width: 65%;
+}
+
+.hebergements-title {
+  margin-bottom: 30px;
+}
+
+.hebergements-cards {
+  display: flex; /* alignement horizontal des cards */
+  flex-wrap: wrap; /* passage à la ligne */
+  justify-content: space-between; /* séparation */
+}
+
+.hebergements .card {
+  display: flex; /* alignements vertical du content */
+  flex-direction: column;
+  flex: 0 0 29.66%; /* nombre de cards sur une ligne avant passage à la ligne + taille (respectueuse de la maquette) */
+  margin-bottom: 30px;
+}
+
+.hebergements-cards img {
+  width: 100%; /* 100% du parent donc de la card */
+  height: 114px; /* hauteur respectueuse de la maquette */
+  border-radius: 20px 20px 0 0;
+}
+
+.hebergements-cards .card-content {
+  padding-left: 15px; /* padding respectueux de la maquette */
+  display: flex;
+  flex-direction: column; /* affichage en colonne */
+}
+
+.hebergements-cards .card-title {
+  margin: 10px 0 0 0; /* écart supérieur respectueux de la maquette */
+}
+
+.hebergements-cards .card-subtitle {
+  margin: 0; /* reset */
+  font-size: 14px;
+  padding: 8px 0; /* écart supérieur et inférieur respectueux de la maquette */
+}
+
+.hebergements-cards .card-rating {
+  font-size: 17px;
+  margin-bottom: 5px; /* écart inférieur respectueux de la maquette */
 }
 
 /****** Populaires ***********/
 .populaires {
-    width: 32%;
+  width: 32%;
 }
 
 .populaires-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .populaires-cards .card {
-    display: flex;
-    margin-top: 33px;
+  display: flex;
+  margin-top: 33px;
 }
 
 .populaires-cards img {
-    width: 33%;
-    height: 136px;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
+  width: 33%;
+  height: 136px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
 }
 
 .populaires-cards .card-content {
-    width: 67%;
-    padding-left: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-sizing: border-box;
+  width: 67%;
+  padding-left: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .populaires-cards .card-title {
-    margin-top: 10px;
-    margin-bottom: 4px;
+  margin-top: 10px;
+  margin-bottom: 4px;
 }
 
 .populaires-cards .card-subtitle {
-    margin: 0;
+  margin: 0;
 }
 
 .populaires-cards .card-rating {
-    margin-bottom: 5px;
+  margin-bottom: 5px;
 }
 
+/****** Activities ***********/
 
+.activities {
+  margin-top: 35px; /* séparation des sections respectueuse de la maquette */
+  padding: 30px; /* écart supérieur et inférieur respectueux de la maquette */
+}
 
+.activities-title {
+  margin-bottom: 30px; /* écart inférieur respectueux de la maquette */
+}
+
+.activities-cards {
+  display: flex; /* affichage en ligne horizontale des cards */
+  gap: 30px; /* gap respectueux de la maquette */
+}
+
+.activities-cards .card {
+  display: flex; /* pour passer en colonne */
+  flex-direction: column; /* passage en colonne */
+  min-width: 23%; /* taille respectueuse de la maquette en % pour le responsive */
+  padding: 0; /* reset du padding de base */
+}
+
+.activities-cards img {
+  width: 100%; /* 100% du parent donc card */
+  height: 380px; /* taille respectueuse de la maquette en hauteur */
+  border-radius: 20px 20px 0 0;
+}
+
+.activities-cards .card-content {
+  padding: 20px 19px; /* respectueux de la maquette*/
+}
+
+.activities-cards .card-content .card-title {
+  margin: 0; /* reset du margin de base */
+}
+
+/****** Footer ***********/
+
+footer {
+  background-color: var(--main-bg-color);
+}
+
+.footer-container {
+  display: flex; /* alignement horizontal des ul */
+  padding: 20px;
+}
+
+footer ul {
+  display: flex; /* flex pour les gaps */
+  flex-direction: column; /* affichage en colonne */
+  gap: 15px; /* gap respectueux de la maquette */
+  width: 33.33%; /* taille respectueuse de la maquette */
+}
 
 /* Le code ci-dessous correspond à la version responsive uniquement */
 
 /****** Media queries ***********/
 /* Medium devices (tablets, less/equal than 1024px) */
 @media (max-width: 1024px) {
-    .hebergements-and-populaires {
-        flex-direction: column;
-    }
+  .hebergements-and-populaires {
+    flex-direction: column;
+  }
 
-    .hebergements {
-        width: 100%;
-    }
+  .hebergements {
+    width: 100%;
+  }
 
-    .populaires {
-        width: 100%;
-        margin-top: 50px;
-    }
+  .populaires {
+    width: 100%;
+    margin-top: 50px;
+  }
 
-    .populaires-cards {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
+  .populaires-cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 
-    .populaires-cards a {
-        width: 30%;
-    }
+  .populaires-cards a {
+    width: 30%;
+  }
 
-    .populaires-cards .card-title {
-        font-size: 14px;
-    }
+  .populaires-cards .card-title {
+    font-size: 14px;
+  }
 
-    .populaires-cards .card-subtitle {
-        font-size: 13px;
-    }
+  .populaires-cards .card-subtitle {
+    font-size: 13px;
+  }
 }
 
 /* Small devices (phones, less than 768px) */
 @media (max-width: 767.98px) {
-    /* ... */
+  /* ... */
 }
