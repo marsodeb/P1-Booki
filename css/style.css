@@ -103,13 +103,13 @@ nav ul {
 }
 
 nav .section-small-txt {
-  padding-top: 16px; /* écart de 16px du top pour respectuer la maquette */
+  border-top: 2px solid transparent; /* application d'une border transparent pour éviter le déplacement du texte en hover quand on ajoute une border */
+  padding-top: 14px; /* écart de 14px du top pour respectuer la maquette */
 }
 
-nav .section-small-txt a:hover {
+nav .section-small-txt:hover {
   color: var(--main-color);
   border-top: 2px solid var(--main-color);
-  padding-top: 14px; /* écart de 14px du top + 2px de border pour rejoindre les 16px d'écart du texte */
 }
 
 /****** Filter & Search ******/
@@ -345,6 +345,7 @@ form {
 
 .activities-cards {
   display: flex; /* affichage en ligne horizontale des cards */
+  justify-content: center; /* centrage */
   gap: 30px; /* gap respectueux de la maquette */
 }
 
@@ -442,5 +443,39 @@ footer ul {
 
 /* Small devices (phones, less than 768px) */
 @media (max-width: 767.98px) {
+  .main-container {
+    padding: 0 20px; /* padding respectueux de la maquette */
+  }
+
+  header {
+    flex-direction: column; /* passage en colonne du logo et de la nav */
+    align-items: center; /* centrage */
+  }
+
+  nav {
+    width: 100%; /* application d'une width de 100% de la longueur à la nav (parent) */
+  }
+
+  nav ul {
+    justify-content: center; /* centrage */
+    gap: 0px; /* reset du gap */
+    margin: 0 -20px; /* reset du padding du main-container */
+  }
+
+  nav .section-small-txt {
+    width: 50%; /* 50% du parent donc nav */
+    text-align: center; /* centrage du texte dans les 50% de width */
+    border-top: 0px; /* reset */
+    padding-top: 0px; /* reset */
+    padding-bottom: 14px; /* écart de 14px vers le bas pour respecter la maquette */
+    border-bottom: 2px solid var(--main-bg-color); /* Ajout des lignes grises en dessous */
+  }
+
+  nav .section-small-txt:hover {
+    border-top: 0px; /* reset */
+    color: var(--main-color);
+    border-bottom: 2px solid var(--main-color);
+  }
+
   /* ... */
 }
