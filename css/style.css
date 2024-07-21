@@ -32,7 +32,7 @@ a {
 }
 
 ul {
-  padding: 0; /* Reset du padding de base des ul  */
+  margin: 0; /* Reset du padding de base des ul  */
 }
 
 li {
@@ -44,11 +44,11 @@ li {
   font-size: 22px;
 }
 
-.section-txt {
+.section-medium-txt {
   font-size: 18px; /* Création d'une class pour les textes de 18 px  */
 }
 
-.section-info {
+.section-small-txt {
   font-size: 16px; /* Création d'une class pour les textes de 16 px  */
 }
 
@@ -73,6 +73,39 @@ li {
 
 .neutral-star {
   color: var(--main-bg-color);
+}
+
+/* Header & Navigation  */
+
+header {
+  display: flex;
+  justify-content: space-between; /* créer l'espace pour séparer le logo et la nav */
+}
+
+.booki-logo {
+  width: 61px; /* taille de logo respectueuse de la maquette */
+  height: 19px;
+  padding: 30px 0; /* ajout d'un padding sur le logo respectueux de la maquette */
+}
+
+.booki-logo img {
+  width: 100%; /* 100% de la taille du parent (donc booki-logo) */
+  height: 100%;
+}
+
+nav ul {
+  display: flex; /* passage du vertical à l'horizontal */
+  gap: 70px; /* séparation des li respectueuse de la maquette */
+}
+
+nav .section-small-txt {
+  padding-top: 16px; /* écart de 16px du top pour respectuer la maquette */
+}
+
+nav .section-small-txt a:hover {
+  color: var(--main-color);
+  border-top: 2px solid var(--main-color);
+  padding-top: 14px; /* écart de 14px du top + 2px de border pour rejoindre les 16px d'écart du texte */
 }
 
 /****** Hebergements And Populaires ***********/
