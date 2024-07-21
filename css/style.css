@@ -267,31 +267,24 @@ form {
 }
 
 .hebergements-cards .card-content {
-  padding-left: 15px;
+  padding-left: 15px; /* padding respectueux de la maquette */
   display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
+  flex-direction: column; /* affichage en colonne */
 }
 
 .hebergements-cards .card-title {
-  margin: 10px 0 0 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  margin: 10px 0 0 0; /* écart supérieur respectueux de la maquette */
 }
 
 .hebergements-cards .card-subtitle {
-  margin: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  margin: 0; /* reset */
   font-size: 14px;
-  padding: 8px 0;
+  padding: 8px 0; /* écart supérieur et inférieur respectueux de la maquette */
 }
 
 .hebergements-cards .card-rating {
   font-size: 17px;
-  margin-bottom: 5px;
+  margin-bottom: 5px; /* écart inférieur respectueux de la maquette */
 }
 
 /****** Populaires ***********/
@@ -323,7 +316,6 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-sizing: border-box;
 }
 
 .populaires-cards .card-title {
