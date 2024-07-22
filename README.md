@@ -1,4 +1,4 @@
-# OC Projet 1 - Booki
+# OC Projet 3 - Booki
 
 Ce projet venant de ma formation chez OpenClassrooms est une introduction aux fondamentaux du langage HTML & CSS.
 
